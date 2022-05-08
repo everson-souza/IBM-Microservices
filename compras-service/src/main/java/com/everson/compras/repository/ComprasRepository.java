@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ComprasRepository extends JpaRepository<Compras, String> {
 
-    @Query("SELECT c FROM Compras c WHERE year(c.data) = :ano and c.valorTotal = (select max(valorTotal) from Compras) ORDER BY c.valorTotal")
+    @Query("SELECT c FROM Compras c WHERE c.valorTotal = (select max(com.valorTotal) from Compras com WHERE year(com.data) = :ano)")
     Compras maiorCompra(@Param("ano") Integer ano);
 }
