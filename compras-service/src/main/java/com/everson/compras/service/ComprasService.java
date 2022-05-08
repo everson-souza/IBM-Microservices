@@ -26,4 +26,8 @@ public class ComprasService {
         return comprasRepository.findAll(Sort.by(Sort.Direction.DESC, "valorTotal"));
     }
 
+    public Compras maiorCompra(Integer ano) {
+        log.info("Inside saveCompras method of ComprasService");
+        return comprasRepository.maiorCompra(ano);
+    }
 }

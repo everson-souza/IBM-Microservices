@@ -29,4 +29,11 @@ public class ComprasController {
         log.info("Inside findComprasById method of ComprasController");
         return comprasService.findCompras();
     }
+
+    @GetMapping("/maior-compra/{ano}")
+    public Compras maiorCompra(@PathVariable("ano") Integer ano){
+        log.info("Inside maiorCompras method of ComprasController");
+        return comprasService.maiorCompra(ano);
+    }
+
 }
