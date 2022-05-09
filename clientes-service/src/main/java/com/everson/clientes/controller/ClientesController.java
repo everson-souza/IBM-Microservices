@@ -1,5 +1,6 @@
 package com.everson.clientes.controller;
 
+import com.everson.clientes.VO.ResponseTemplateVO;
 import com.everson.clientes.entity.Clientes;
 import com.everson.clientes.service.ClientesService;
 
@@ -25,9 +26,16 @@ public class ClientesController {
         clientesService.saveClientes(clientes);
     }
 
-    @GetMapping ("/clientes-fieis")
-    public List<Clientes> findTop3Clientes(@RequestBody List<Clientes> clientes){
+//    @GetMapping ("/clientes-fieis")
+//    public List<Clientes> findTop3Clientes(@RequestBody List<Clientes> clientes){
+//        log.info("Inside findClientes method of ClientesController");
+//        return clientesService.findTop3Clientes();
+//    }
+
+    @GetMapping ("/{id}")
+    public ResponseTemplateVO responseTemplateVO(@PathVariable("id") Integer cliente){
         log.info("Inside findClientes method of ClientesController");
-        return clientesService.findTop3Clientes();
+        return clientesService.getClienteCompras(cliente);
+
     }
 }

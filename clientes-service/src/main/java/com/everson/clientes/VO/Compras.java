@@ -1,4 +1,4 @@
-package com.everson.clientes.entity;
+package com.everson.clientes.VO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
