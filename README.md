@@ -2,7 +2,7 @@
 
 #### This application aims to provide a microservice with the following endpoints after consuming the data from the bellow mocks and returning the requested information
 
-### About
+## About
 Shopping List (Lista de Compras): http://www.mocky.io/v2/598b16861100004905515ec7
 
 Client List (Lista de Clientes): http://www.mocky.io/v2/598b16291100004705515ec5
@@ -19,11 +19,11 @@ This project contains:
 
 Obs.: Lista de Compras had 'cliente' field altered to Integer in order to match field 'id' in Lista de Clientes   
 
-### Status
+## Status
 
 The application is functional
 
-### Technologies
+## Technologies
 
 The following tools were used to build this project:
 
