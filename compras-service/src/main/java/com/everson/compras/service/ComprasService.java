@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -16,18 +15,21 @@ public class ComprasService {
     @Autowired
     private ComprasRepository comprasRepository;
 
+    // Salvar a lista de compras
     public void saveCompras(List<Compras> compras) {
-        log.info("Inside saveCompras method of ComprasService");
+        log.info("ComprasService.saveCompras");
         comprasRepository.saveAll(compras);
     }
 
+    // Retornar a lista de compras ordenadas de forma crescente por valor
     public List<Compras> findCompras() {
-        log.info("Inside saveCompras method of ComprasService");
+        log.info("ComprasService.findCompras");
         return comprasRepository.findAll(Sort.by(Sort.Direction.DESC, "valorTotal"));
     }
 
+    //  Retornar a maior compra do ano informado com dados da compra
     public Compras maiorCompra(Integer ano) {
-        log.info("Inside saveCompras method of ComprasService");
+        log.info("ComprasService.maiorCompra");
         return comprasRepository.maiorCompra(ano);
     }
 }

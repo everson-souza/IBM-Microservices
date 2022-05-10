@@ -26,16 +26,17 @@ public class ClientesController {
         clientesService.saveClientes(clientes);
     }
 
-//    @GetMapping ("/clientes-fieis")
-//    public List<Clientes> findTop3Clientes(@RequestBody List<Clientes> clientes){
-//        log.info("Inside findClientes method of ClientesController");
-//        return clientesService.findTop3Clientes();
-//    }
-
-    @GetMapping ("/{id}")
-    public ResponseTemplateVO responseTemplateVO(@PathVariable("id") Integer cliente){
-        log.info("Inside findClientes method of ClientesController");
-        return clientesService.getClienteCompras(cliente);
-
+    @GetMapping("/clientes")
+    public List<Clientes> findClientes(){
+        log.info("Inside findClientes method of ComprasController");
+        return clientesService.findClientes();
     }
+
+    @GetMapping("/clientes-fieis")
+    public List<Clientes> getClienteCompras(){
+        log.info("Inside getClienteCompras method of ComprasController");
+        return clientesService.getClientesFieis();
+    }
+
+
 }

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +23,7 @@ public class Compras {
     @JsonFormat(pattern="dd-MM-yyyy")
     private Date data;
 
-    private String cliente;
+    private Integer cliente;
 
     private Float valorTotal;
 

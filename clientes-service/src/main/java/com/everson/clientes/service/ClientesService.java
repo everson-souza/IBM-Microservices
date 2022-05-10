@@ -28,22 +28,16 @@ public class ClientesService {
         clientesRepository.saveAll(clientes);
     }
 
-//    public List<Clientes> findTop3Clientes() {
-//        log.info("Inside findClientes method of ClientesService");
-//        return clientesRepository.findTop3Clientes();
-//    }
-
-    public ResponseTemplateVO getClienteCompras(Integer cliente) {
-        log.info("Inside getClienteCompras method of ClientesService");
-        ResponseTemplateVO vo = new ResponseTemplateVO();
-        Clientes clientes = clientesRepository.findById(cliente);
-
-        Compras compras = restTemplate.getForObject("http://localhost:9001/compras/" + clientes.getId(), Compras.class);
-
-        vo.setClientes(clientes);
-        vo.setCompras(compras);
-
-        return vo;
+    public List<Clientes> findClientes() {
+        log.info("Inside findClientes method of ComprasService");
+        return clientesRepository.findAll();
     }
 
+    public List<Clientes> getClientesFieis() {
+        log.info("Inside getClienteCompras method of ClientesService");
+
+        Compras compras = restTemplate.getForObject("http://localhost:9001/compras/", Compras.class);
+        return clientesRepository.findTop3Clientes();
+
+    }
 }
