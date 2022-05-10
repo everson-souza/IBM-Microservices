@@ -45,21 +45,21 @@ public class ComprasController {
     // Salvar a lista de clientes
     @PostMapping ("/clientes")
     public void saveClientes(@RequestBody List<Clientes> clientes){
-        log.info("Inside saveClientes method of ClientesController");
+        log.info("ClientesController.saveClientes");
         clientesService.saveClientes(clientes);
     }
 
     // Retornar a lista de clientes
     @GetMapping("/clientes")
     public List<Clientes> findClientes(){
-        log.info("Inside findClientes method of ComprasController");
+        log.info("ClientesController.findClientes");
         return clientesService.findClientes();
     }
 
     // Retornar o Top 3 clientes mais fiéis, clientes que possuem mais compras recorrentes com maiores valores.
     @GetMapping("/clientes-fieis")
-    public List<Clientes> getClienteCompras(){
-        log.info("Inside getClienteCompras method of ComprasController");
+    public List<Clientes> getClienteFieis(){
+        log.info("ClientesController.getClienteFieis");
         return clientesService.getClientesFieis();
     }
 }
